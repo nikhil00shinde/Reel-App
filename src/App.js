@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Signup from "./Components/Signup";
+import Login from "./Components/Login";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		// React Router dom ka version 5.1.2 hain esliye switch use karne se problem nhi aayega
+		<BrowserRouter>
+			<Route path="/login" component={Login} />
+			<Route path="/signup" component={Signup} />
+		</BrowserRouter>
+	);
 }
 
 export default App;
+
+//npm i @mui/material @emotion/styled react-router-dom @material-ui/icons pure-react-carousel
