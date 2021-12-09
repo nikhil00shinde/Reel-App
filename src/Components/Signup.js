@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -10,7 +11,7 @@ import TextField from "@mui/material/TextField";
 import "./Signup.css";
 import insta from "../Assets/Instagram.JPG";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function Signup() {
 	//agar component ke liye css likhna hain toh humhe useStyles se makeStyles wala function call karna padega
@@ -26,7 +27,15 @@ export default function Signup() {
 	});
 	//ye classes naam ka object hain jisse hum style de sakte hain apne component ko
 	const classes = useStyles();
-	
+
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [name, setname] = useState("");
+	const [file, setFile] = useState(null);
+	const [error, setError] = useState("");
+	const [loading, setLoading] = useState("");
+	const history = useHistory();
+
 	return (
 		<div className="signupWrapper">
 			<div className="signupCard">
