@@ -74,7 +74,7 @@ export default function Signup() {
 						email: email,
 						userId: uid,
 						fullname: name,
-						profileUrl: uid,
+						profileUrl: url,
 						createdAt: database.getTimeStamp(),
 					});
 				});
