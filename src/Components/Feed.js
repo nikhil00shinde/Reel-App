@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import UploadFile from "./UploadFile";
 import { database } from "../firebase";
+import Posts from "./Posts";
 
 export default function Feed() {
 	const { user, logout } = useContext(AuthContext);
@@ -10,7 +11,7 @@ export default function Feed() {
 	useEffect(() => {
 		//onSnapshot => ek type of event listener hain
 		//jab bhi us object mei change aaega, toh onSnapshot function chal gaega
-		console.log(user);
+		
 		const unsub = database.users.doc(user.uid).onSnapshot((snapshot) => {
 			setUserData(snapshot.data());
 		});
@@ -33,6 +34,7 @@ export default function Feed() {
 				<button onClick={logout}>Logout</button>
 			</div>
 			<UploadFile user={userData} />
+			<Posts userData={userData} />
 		</div>
 	);
 }
