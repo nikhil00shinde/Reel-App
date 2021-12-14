@@ -28,14 +28,43 @@
 
 .icon-styling {
 	position: absolute;
-	bottom: 5%;
-	left: 10.8%;
+	bottom: 2%;
+	left: 13%;
 }
 .like {
 	cursor: pointer;
 	color: #e74c3c;
 }
-.unlike{
+.unlike {
 	cursor: pointer;
 	color: white;
+}
+.chat-styling {
+	color: white;
+	position: absolute;
+	bottom: 2%;
+	left: 25%;
+}
+
+.modal-container {
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+.video-modal {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.video-modal video {
+	height: 88vh;
+}
+
+.comment-modal {
+	width: 50%;
+	height: 100%;
 }
