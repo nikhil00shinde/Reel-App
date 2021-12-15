@@ -22,6 +22,7 @@ export const database = {
 	users: firestore.collection("users"),
 	//ye hamari post ke liye, jab bhi hum koi post karenge sath mei time bhi toh aage sort karne ke liye on the basis of time that is latest post and old post
 	posts: firestore.collection("posts"),
+	comments: firestore.collection("comments"),
 	getTimeStamp: firebase.firestore.FieldValue.serverTimestamp,
 };
 
