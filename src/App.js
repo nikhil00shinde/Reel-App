@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext";
 import Feed from "./Components/Feed";
 import PrivateRoute from "./Components/PrivateRoute";
+import Profile from "./Components/Profile";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Switch>
 					<Route path="/login" component={Login} />
 					<Route path="/signup" component={Signup} />
+					<Route path="/profile/:id" component={Profile} />
 					<PrivateRoute path="/" component={Feed} />
 				</Switch>
 			</AuthProvider>

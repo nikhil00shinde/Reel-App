@@ -69,7 +69,6 @@ export default function Signup() {
 
 			function fn3() {
 				uploadTask.snapshot.ref.getDownloadURL().then((url) => {
-					console.log(url);
 					database.users.doc(uid).set({
 						email: email,
 						userId: uid,
