@@ -8,7 +8,9 @@ import Navbar from "./Navbar";
 export default function Feed() {
 	const { user, logout } = useContext(AuthContext);
 	const [userData, setUserData] = useState("");
+	console.log(userData);
 
+	console.log(user.uid);
 	useEffect(() => {
 		//onSnapshot => ek type of event listener hain
 		//jab bhi us object mei change aaega, toh onSnapshot function chal gaega
@@ -23,7 +25,7 @@ export default function Feed() {
 	}, [user]);
 	return (
 		<>
-			<Navbar userData={userData	} />
+			<Navbar userData={userData} />
 			<div
 				style={{
 					display: "flex",

@@ -6,6 +6,7 @@ import { AuthProvider } from "./Context/AuthContext";
 import Feed from "./Components/Feed";
 import PrivateRoute from "./Components/PrivateRoute";
 import Profile from "./Components/Profile";
+import Ioa from "./Components/Ioa";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				</Switch>
 			</AuthProvider>
 		</BrowserRouter>
+		// <Ioa />
 	);
 }
 
@@ -27,5 +29,5 @@ export default App;
 
 //npm i @mui/material @emotion/styled react-router-dom @material-ui/icons pure-react-carousel
 
-//export default-> jis naam se variable ya function bna hain usi naam se import krna hota hain
-//export -> koi bhi naam se file aap import kar sakte ho
+//export default-> jkoi bhi naam se file aap import kar sakte ho
+//export -> is naam se variable ya function bna hain usi naam se import krna hota hain

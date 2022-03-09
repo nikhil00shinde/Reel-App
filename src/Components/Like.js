@@ -11,7 +11,7 @@ function Like({ userData, postData }) {
 
 	const handleLike = () => {
 		if (like === true) {
-			let narr = postData.likes.filter((el) => el != userData.userId);
+			let narr = postData.likes.filter((el) => el !== userData.userId);
 			console.log(narr);
 			database.posts.doc(postData.postId).update({ likes: narr });
 		} else {
@@ -24,7 +24,7 @@ function Like({ userData, postData }) {
 		<div>
 			{like != null ? (
 				<>
-					{like == true ? (
+					{like === true ? (
 						<FavoriteIcon className="icon-styling like" onClick={handleLike} />
 					) : (
 						<FavoriteIcon

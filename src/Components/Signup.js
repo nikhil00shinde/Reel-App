@@ -39,7 +39,7 @@ export default function Signup() {
 	const { signup } = useContext(AuthContext);
 
 	const handleClick = async () => {
-		if (file == null) {
+		if (file === null) {
 			setError("Please upload profile image first");
 			setTimeout(() => {
 				setError("");
@@ -82,6 +82,7 @@ export default function Signup() {
 				//history mei jo url tha voh update kar diya,ab aap "/signup" usne push sidha "/" kara
 				//ab routing mei sidha feed wale component mei jayega
 				history.push("/");
+				console.log("gone feed");
 			}
 		} catch (err) {
 			setError(err);
@@ -102,7 +103,7 @@ export default function Signup() {
 						<Typography className={classes.text1} variant="subtitle1">
 							Sign up to see photos and videos from your friends
 						</Typography>
-						{error != "" && <Alert severity="error">{error}</Alert>}
+						{error !== "" && <Alert severity="error">{error}</Alert>}
 						<TextField
 							id="outlined-basic"
 							label="Email"
@@ -112,7 +113,7 @@ export default function Signup() {
 							fullWidth={true}
 							value={email}
 							onChange={(e) => {
-								setEmail(e.target.value);
+								setEmail(e.target.value.trim());
 							}}
 						/>
 						<TextField
@@ -124,7 +125,7 @@ export default function Signup() {
 							fullWidth={true}
 							value={password}
 							onChange={(e) => {
-								setPassword(e.target.value);
+								setPassword(e.target.value.trim());
 							}}
 						/>
 						<TextField
@@ -136,7 +137,7 @@ export default function Signup() {
 							fullWidth={true}
 							value={name}
 							onChange={(e) => {
-								setName(e.target.value);
+								setName(e.target.value.trim());
 							}}
 						/>
 						<Button

@@ -10,8 +10,8 @@ function Like2({ userData, postData }) {
 	}, [postData]);
 
 	const handleLike = () => {
-		if (like == true) {
-			let narr = postData.likes.filter((el) => el != userData.userId);
+		if (like === true) {
+			let narr = postData.likes.filter((el) => el !== userData.userId);
 			database.posts.doc(postData.postId).update({ likes: narr });
 		} else {
 			let narr = [...postData.likes, userData.userId];
@@ -23,7 +23,7 @@ function Like2({ userData, postData }) {
 		<div>
 			{like != null ? (
 				<>
-					{like == true ? (
+					{like === true ? (
 						<FavoriteIcon
 							style={{ padding: "1rem", paddingTop: "0.5rem" }}
 							className="like"

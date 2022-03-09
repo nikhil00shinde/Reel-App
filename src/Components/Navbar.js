@@ -137,6 +137,7 @@ export default function Navbar({ userData }) {
 							style={{ width: "20vh" }}
 							src={insta}
 							onClick={handlebannerclick}
+							alt={"h"}
 						/>
 					</div>
 
@@ -167,7 +168,7 @@ export default function Navbar({ userData }) {
 							color="inherit"
 						>
 							<Avatar
-								src={userData.profileUrl}
+								src={userData?.profileUrl}
 								sx={{ height: "2rem", width: "2rem" }}
 							/>
 						</IconButton>

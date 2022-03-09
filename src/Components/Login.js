@@ -117,7 +117,7 @@ export default function Login() {
 						<img src={insta} alt="Instagram Logo" />
 					</div>
 					<CardContent>
-						{error != "" && <Alert severity="error">{error}</Alert>}
+						{error !== "" && <Alert severity="error">{error}</Alert>}
 						<TextField
 							id="outlined-basic"
 							label="Email"
@@ -127,7 +127,7 @@ export default function Login() {
 							fullWidth={true}
 							value={email}
 							onChange={(e) => {
-								setEmail(e.target.value);
+								setEmail(e.target.value.trim());
 							}}
 						/>
 						<TextField

@@ -57,6 +57,36 @@ function Posts({ userData }) {
 		return unsub;
 	}, []);
 
+	const callback = (entries) => {
+		entries.forEach((entry) => {
+			let ele = entry.target.childNodes[0];
+
+			ele.play().then(() => {
+				if (!ele.paused && !entry.isIntersecting) {
+					ele.pause();
+					console.log(
+						"🚀 ~ file: Ioa.js ~ line 7 ~ entries.forEach ~ ele",
+						ele
+					);
+				}
+			});
+		});
+	};
+
+	let observer = new IntersectionObserver(callback, { threshold: 0.6 });
+
+	React.useEffect(() => {
+		const elements = document.querySelectorAll(".videos");
+
+		elements.forEach((entry) => {
+			observer.observe(entry);
+		});
+
+		return ()=>{
+			observer.disconnect()
+		}
+	}, [posts]);
+
 	return (
 		<div>
 			{posts == null || userData == null ? (
@@ -78,7 +108,7 @@ function Posts({ userData }) {
 										onClick={() => handleClickOpen(post.pId)}
 									/>
 									<Dialog
-										open={open == post.pId}
+										open={open === post.pId}
 										onClose={handleClose}
 										aria-labelledby="alert-dialog-title"
 										aria-describedby="alert-dialog-description"

@@ -13,6 +13,7 @@ function AddComment({ userData, postData }) {
 		};
 
 		database.comments.add(obj).then((doc) => {
+			console.log(doc.id);
 			database.posts.doc(postData.postId).update({
 				comments: [...postData.comments, doc.id],
 			});

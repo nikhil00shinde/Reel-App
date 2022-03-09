@@ -16,6 +16,7 @@ function Video(props) {
 			e.target.muted = true;
 		}
 	};
+	// .play() -> tabhi access kar sakte jab video property muted ho
 	return (
 		<video
 			src={props.src}
